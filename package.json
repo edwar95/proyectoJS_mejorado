@@ -1,0 +1,19 @@
+{
+  "name": "proyectojs_mejorado",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwar95/proyectoJS_mejorado.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwar95/proyectoJS_mejorado/issues"
+  },
+  "homepage": "https://github.com/edwar95/proyectoJS_mejorado#readme"
+}
