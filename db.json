@@ -1,0 +1,75 @@
+{
+  "users": [
+    {
+      "name": "Francisco Izurieta",
+      "username": "francisco",
+      "password": "1234"
+    },
+    {
+      "name": "a",
+      "username": "a",
+      "password": "a"
+    },
+    {
+      "name": "a",
+      "username": "a",
+      "password": "x"
+    }
+  ],
+  "movies": [
+    {
+      "title": "The Avengers",
+      "year": "2012",
+      "director": "Joss Whedon",
+      "trailer": "https://www.youtube.com/watch?v=a-7MWYqicC0"
+    },
+    {
+      "title": "Incredibles 2",
+      "year": "2018",
+      "director": "Brad Bird",
+      "trailer": "https://www.youtube.com/watch?v=ZJDMWVZta3M"
+    },
+    {
+      "title": "Toy Story",
+      "year": "1995",
+      "director": "John Lasseter",
+      "trailer": "https://www.youtube.com/watch?v=KYz2wyBy3kc"
+    },
+    {
+      "title": "Get Out",
+      "year": "2017",
+      "director": "Jordan Peele",
+      "trailer": "https://www.imdb.com/title/tt5052448/videoplayer/vi2005186073"
+    },
+    {
+      "title": "Avatar",
+      "year": "2009",
+      "director": "James Cameron",
+      "trailer": "https://www.imdb.com/title/tt0499549/videoplayer/vi531039513"
+    },
+    {
+      "title": "Blade Runner 2049",
+      "year": "2017",
+      "director": "Denis Villeneuve",
+      "trailer": "https://www.youtube.com/watch?v=gCcx85zbxz4"
+    },
+    {
+      "title": "Forrest Gump",
+      "year": "1994",
+      "director": "Robert Zemeckis",
+      "trailer": "https://www.imdb.com/title/tt0109830/videoplayer/vi3567517977"
+    },
+    {
+      "title": "The Meg",
+      "year": "2018",
+      "director": "Jon Turteltaub",
+      "trailer": "https://www.youtube.com/watch?v=bsLk0NPRFAc"
+    },
+    {
+      "title": "The Dark Knight",
+      "year": "2008",
+      "director": "Christopher Nolan",
+      "trailer": "https://www.youtube.com/watch?v=kmJLuwP3MbY"
+    }
+  ]
+}

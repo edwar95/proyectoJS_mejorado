@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/edwar95/proyectoJS_mejorado/issues"
   },
-  "homepage": "https://github.com/edwar95/proyectoJS_mejorado#readme"
+  "homepage": "https://github.com/edwar95/proyectoJS_mejorado#readme",
+  "dependencies": {
+    "@types/inquirer": "0.0.43",
+    "@types/node": "^10.12.12",
+    "inquirer": "^6.2.1",
+    "rxjs": "^6.3.3"
+  }
 }
