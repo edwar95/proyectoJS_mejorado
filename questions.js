@@ -25,3 +25,15 @@ exports.newUserPrompt = [
         mask: '*'
     }
 ];
+exports.passwordPrompt = {
+    type: 'password',
+    message: 'Ingrese su contraseña:',
+    name: 'password',
+    mask: '*'
+};
+exports.teamPrompt = {
+    type: 'list',
+    name: 'teams',
+    message: 'Escoja una opcion:',
+    choices: ['Ingresar Nuevo Equipo', 'Ver Todos', new inquirer_1.Separator(), 'Salir']
+};

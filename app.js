@@ -42,10 +42,47 @@ var registerUser = function (dbResponse) {
         return from_1.from(utils_1.writeFile('db.json', content, dbResponse));
     }));
 };
+var enterPassword = function () {
+    return operators_1.mergeMap(function (dbResponse) {
+        return from_1.from(inquirer_1.prompt(questions_1.passwordPrompt)).pipe(operators_1.map(function (answer) {
+            if (dbResponse.activeUser.verifyPassword(answer.password)) {
+                dbResponse.activeUser.sayHello();
+            }
+            else {
+                dbResponse.userValidation = false;
+            }
+            return dbResponse;
+        }));
+    });
+};
+var teamMenu = function () {
+    return operators_1.mergeMap(function (dbResponse) {
+        return from_1.from(inquirer_1.prompt(questions_1.teamPrompt)).pipe(operators_1.map(function (answer) {
+            dbResponse.TeamSelection = answer;
+            return dbResponse;
+        }));
+    });
+};
+var teamResponse = function () {
+    return operators_1.mergeMap(function (dbResponse) {
+        switch (dbResponse.TeamSelection.team) {
+            case 'Ingresar Nueva':
+            //return insertMovie(dbResponse);
+            case 'Ver Todas':
+            //return seeMovies(dbResponse);
+            default:
+                throw Observable_1.Observable["throw"]('Adios');
+        }
+    });
+};
 var main = function () {
     var dbResponse$ = from_1.from(utils_1.initDB());
     dbResponse$
-        .pipe(start(), startResponse())
+        .pipe(start(), startResponse(), operators_1.filter(function (dbResponse) {
+        return dbResponse.userRegistration !== true;
+    }), user_1.validateUser(), enterPassword(), operators_1.filter(function (dbResponse) {
+        return dbResponse.userValidation !== false;
+    }), teamMenu(), teamResponse())
         .subscribe(function (data) {
     });
 };

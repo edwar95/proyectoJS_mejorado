@@ -32,3 +32,10 @@ export const passwordPrompt: Question<Answers> = {
     name: 'password',
     mask: '*'
 };
+
+export const teamPrompt: Question<Answers> = {
+    type: 'list',
+    name: 'teams',
+    message: 'Escoja una opcion:',
+    choices: ['Ingresar Nuevo Equipo', 'Ver Todos', new Separator(), 'Salir']
+};

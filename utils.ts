@@ -18,7 +18,7 @@ export interface DBResponse {
 
 interface DB {
     users: UserInterface[];
-    movies: Team[];
+    teams: Team[];
 }
 
 export const initDB = async () => {
@@ -66,6 +66,8 @@ export const writeFile = (
         fs.writeFile(fileName, content, (error: NodeJS.ErrnoException) => {
             if (!error) {
                 resolve(dbResponse);
+            }else {
+                reject(error);
             }
         });
     });

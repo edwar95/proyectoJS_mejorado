@@ -1,7 +1,7 @@
 import {DBResponse, initDB, writeFile} from "./utils";
 import {from} from "rxjs/internal/observable/from";
 import {filter, map, mergeMap} from "rxjs/operators";
-import {newUserPrompt, passwordPrompt, startPrompt, usernamePrompt} from "./questions";
+import {newUserPrompt, passwordPrompt, startPrompt, usernamePrompt, teamPrompt} from "./questions";
 import {prompt,Answers, Separator} from 'inquirer';
 import {User, UserInterface, validateUser} from "./user";
 import {Observable} from "rxjs/internal/Observable";
@@ -67,6 +67,31 @@ const enterPassword = () => {
     });
 };
 
+const teamMenu = () => {
+    return mergeMap((dbResponse: DBResponse) => {
+        return from(prompt(teamPrompt)).pipe(
+            map((answer: Answers) => {
+                dbResponse.TeamSelection= answer;
+                return dbResponse;
+            })
+        );
+    });
+};
+
+const teamResponse = () => {
+    return mergeMap((dbResponse: DBResponse) => {
+        switch (dbResponse.TeamSelection!.team) {
+            case 'Ingresar Nueva':
+                //return insertMovie(dbResponse);
+            case 'Ver Todas':
+                //return seeMovies(dbResponse);
+            default:
+                throw Observable.throw('Adios');
+        }
+    });
+};
+
+
 const main =()=>{
     const dbResponse$= from(initDB());
     dbResponse$
@@ -81,6 +106,8 @@ const main =()=>{
             filter((dbResponse: DBResponse) => {
                 return dbResponse.userValidation !== false;
             }),
+            teamMenu(),
+            teamResponse(),
 
         )
         .subscribe(

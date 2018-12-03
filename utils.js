@@ -85,6 +85,9 @@ exports.writeFile = function (fileName, content, dbResponse) {
             if (!error) {
                 resolve(dbResponse);
             }
+            else {
+                reject(error);
+            }
         });
     });
 };
